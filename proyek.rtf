@@ -1,0 +1,387 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2576
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 biarkan nama, val;\
+const url_string = document.URL;\
+const url = URL baru (url_string);\
+biarkan pengirim;\
+\
+if (url.searchParams.get ('by')! = null) \{\
+  sender = url.searchParams.get ('by');\
+\} lain \{\
+  pengirim = \'93EL;\
+\}\
+\
+\
+document.querySelector (". tombol"). addEventListener ('click', function () \{\
+  Swal.fire ("Hallo Pacarku", "Aku ada pertanyaan nih buat kamu By", "question"). Then (function () \{\
+    Swal.fire ("Jawab yang jujur \uc0\u8203 \u8203 ya!"). Maka (fungsi () \{\
+      Swal.fire ("Awas aja kalau kamu bohong", "", "error"). Then (function () \{\
+\
+        const \{\
+          nilai: nama\
+        \} = Swal.fire (\{\
+          judul: 'Masukin nama kamu dulu',\
+          Masukkan teks',\
+          inputLabel: '',\
+          showCancelButton: benar,\
+          inputValidator: (nilai) => \{\
+            if (! value) \{\
+              kembalikan 'Isi dulu dong by'\
+            \} lain \{\
+              nama = nilai;\
+            \}\
+          \}\
+        \}). kemudian (function () \{\
+          pertanyaan const = Swal.fire (\{\
+            title: `$ \{nama\} sayang ga sama $ \{EL\}?`,\
+            showDenyButton: benar,\
+            showCancelButton: false,\
+            confirmButtonText: `Sayang`,\
+            denyButtonText: `Enggak`,\
+          \}). lalu ((hasil) => \{\
+            / * Baca selengkapnya tentang isConfirmed, isDenied di bawah * /\
+            if (result.isConfirmed) \{\
+              Swal.fire (`$ \{EL\} juga sayang banget sama $ \{nama\}`). Lalu (function () \{\
+                Swal.fire (\{\
+                  title: 'Seberapa sayang emangnya?',\
+                  ikon: 'pertanyaan',\
+                  masukan: 'range',\
+                  inputLabel: 'Antara 1 - 100 ya',\
+                  inputAttributes: \{\
+                    min: 1,\
+                    maks: 100,\
+                    Langkah 1\
+                  \},\
+                  inputValue: 50\
+                \}). lalu ((e) => \{\
+                  val = e.value\
+                  Swal.fire (`Makasih ya udah sayang sama $ \{EL\} $ \{val\}%`) .then (function () \{\
+                    Swal.fire (\{\
+                      title: `Sekarang $ \{nama\} kangen ga sama $ \{EL\}?`,\
+                      showDenyButton: benar,\
+                      showCancelButton: false,\
+                      confirmButtonText: `Kangen: (`,\
+                      denyButtonText: `Enggak`,\
+                    \}). lalu ((hasil) => \{\
+                      / * Baca selengkapnya tentang isConfirmed, isDenied di bawah * /\
+                      if (result.isConfirmed) \{\
+                        Swal.fire (`Huhu iya $ \{EL\} juga kangen $ \{nama\}, makasihhh yaa`). Lalu (function () \{\
+                          Swal.fire ('Terakhir deh sayang'). Then (function () \{\
+                            Swal.fire ('Coba klik ikon hati di paling bawah dong')\
+                          \})\
+                        \})\
+                      \} lain jika (result.isDenied) \{\
+                        Swal.fire ('yahhh, emang ga kangen sama pacar sendiri', '', 'error'). Then (function () \{\
+                          Swal.fire ('Yaudah deh okee sayangg: ((')\
+                        \})\
+                      \}\
+                    \})\
+                  \})\
+                \})\
+              \})\
+            \} lain jika (result.isDenied) \{\
+              Swal.fire (`Yakin ga suka sama $ \{EL\}?`, '', 'Error'). Then (function () \{\
+                Swal.fire ('Yaudah dehh okee sayang: ((')\
+              \})\
+            \}\
+          \})\
+        \})\
+      \});\
+    \});\
+  \});\
+\});\
+\
+\
+document.querySelector ('. hati'). addEventListener ('click', function () \{\
+  konfeti();\
+  const teks = document.getElementById ('teks');\
+  const btn = document.querySelector ('. tombol');\
+  teks.classList.remove ('d-none')\
+  btn.classList.add ('d-none')\
+  console.log (teks);\
+  console.log (btn);\
+\})\
+\
+'gunakan ketat';\
+\
+// Jika disetel ke true, pengguna harus menekan\
+// ATAS ATAS BAWAH GANJIL KIRI KANAN KIRI KANAN KANAN AB\
+// untuk memicu confetti dengan tema warna acak.\
+// Jika tidak, confetti akan terus jatuh.\
+var onlyOnKonami = false;\
+\
+function confetti () \{\
+  // Globals\
+  var $ window = $ (window),\
+    random = Math.random,\
+    cos = Math.cos,\
+    sin = Math.sin,\
+    PI = Math.PI,\
+    PI2 = PI * 2,\
+    timer = tidak ditentukan,\
+    frame = tidak terdefinisi,\
+    confetti = [];\
+\
+  var runFor = 2000\
+  var isRunning = true\
+\
+  setTimeout (() => \{\
+    isRunning = false\
+  \}, mengejar);\
+\
+  // Pengaturan\
+  var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],\
+    penunjuk = 0;\
+\
+  partikel var = 150,\
+    menyebar = 20,\
+    sizeMin = 5,\
+    sizeMax = 12 - sizeMin,\
+    eksentrisitas = 10,\
+    deviasi = 100,\
+    dxThetaMin = -.1,\
+    dxThetaMax = -dxThetaMin - dxThetaMin,\
+    dyMin = .13,\
+    dyMax = .18,\
+    dThetaMin = .4,\
+    dThetaMax = 0,7 - dThetaMin;\
+\
+  var colorThemes = [\
+    fungsi () \{\
+      warna kembali (200 * acak () | 0, 200 * acak () | 0, 200 * acak () | 0);\
+    \},\
+    fungsi () \{\
+      var black = 200 * acak () | 0;\
+      warna kembali (200, hitam, hitam);\
+    \},\
+    fungsi () \{\
+      var black = 200 * acak () | 0;\
+      warna kembali (hitam, 200, hitam);\
+    \},\
+    fungsi () \{\
+      var black = 200 * acak () | 0;\
+      warna kembali (hitam, hitam, 200);\
+    \},\
+    fungsi () \{\
+      warna kembali (200, 100, 200 * acak () | 0);\
+    \},\
+    fungsi () \{\
+      warna kembali (200 * random () | 0, 200, 200);\
+    \},\
+    fungsi () \{\
+      var black = 256 * acak () | 0;\
+      warna kembali (hitam, hitam, hitam);\
+    \},\
+    fungsi () \{\
+      return colorThemes [random () <.5? 1: 2] ();\
+    \},\
+    fungsi () \{\
+      return colorThemes [random () <.5? 3: 5] ();\
+    \},\
+    fungsi () \{\
+      return colorThemes [random () <.5? 2: 4] ();\
+    \}\
+  ];\
+\
+  warna fungsi (r, g, b) \{\
+    return 'rgb (' + r + ',' + g + ',' + b + ')';\
+  \}\
+\
+  // Interpolasi kosinus\
+  fungsi interpolasi (a, b, t) \{\
+    kembali (1 - cos (PI * t)) / 2 * (b - a) + a;\
+  \}\
+\
+  // Buat Disk Poisson Maksimal 1D di atas [0, 1]\
+  radius var = 1 / eksentrisitas,\
+    radius2 = radius + radius;\
+\
+  function createPoisson () \{\
+    // domain adalah kumpulan poin yang masih tersedia untuk dipilih\
+    // D = serikat \{[d_i, d_i + 1] | saya genap\}\
+    domain var = [radius, 1 - radius],\
+      ukur = 1 - radius2,\
+      spline = [0, 1];\
+    while (ukur) \{\
+      var dart = ukur * random (),\
+        i, l, interval, a, b, c, d;\
+\
+      // Temukan di mana letak panah\
+      untuk (i = 0, l = domain.length, measure = 0; i <l; i + = 2) \{\
+        a = domain [i], b = domain [i + 1], interval = b - a;\
+        if (panah <ukuran + interval) \{\
+          spline.push (panah + = a - ukuran);\
+          istirahat;\
+        \}\
+        ukur + = interval;\
+      \}\
+      c = panah - jari-jari, d = panah + jari-jari;\
+\
+      // Perbarui domain\
+      untuk (i = domain.length - 1; i> 0; i - = 2) \{\
+        l = i - 1, a = domain [l], b = domain [i];\
+        // c --- d c --- d Tidak melakukan apa-apa\
+        // c ----- d c ----- d Pindah interior\
+        // c -------------- d Hapus interval\
+        // c - d Interval pisah\
+        // a ------ b\
+        if (a> = c && a <d)\
+          jika (b> d) domain [l] = d; // Pindah interior (Casing kiri)\
+          lain domain.splice (l, 2); // Hapus interval\
+        lain jika (a <c && b> c)\
+          jika (b <= d) domain [i] = c; // Pindah interior (Kasus kanan)\
+          lain domain.splice (i, 0, c, d); // Pisahkan interval\
+      \}\
+\
+      // Ukur ulang domain\
+      untuk (i = 0, l = domain.length, measure = 0; i <l; i + = 2)\
+        ukur + = domain [i + 1] - domain [i];\
+    \}\
+\
+    kembali spline.sort ();\
+  \}\
+\
+  // Buat wadah menyeluruh\
+  var container = document.createElement ('div');\
+  container.style.position = 'tetap';\
+  container.style.top = '0';\
+  container.style.left = '0';\
+  container.style.width = '100%';\
+  container.style.height = '0';\
+  container.style.overflow = 'terlihat';\
+  container.style.zIndex = '9999';\
+\
+  // Konstruktor confetto\
+  function Confetto (tema) \{\
+    this.frame = 0;\
+    this.outer = document.createElement ('div');\
+    this.inner = document.createElement ('div');\
+    this.outer.appendChild (this.inner);\
+\
+    var outerStyle = this.outer.style,\
+      innerStyle = this.inner.style;\
+    outerStyle.position = 'absolute';\
+    outerStyle.width = (sizeMin + sizeMax * random ()) + 'px';\
+    outerStyle.height = (sizeMin + sizeMax * random ()) + 'px';\
+    innerStyle.width = '100%';\
+    innerStyle.height = '100%';\
+    innerStyle.backgroundColor = theme ();\
+\
+    outerStyle.perspective = '50px';\
+    outerStyle.transform = 'rotate (' + (360 * random ()) + 'deg)';\
+    this.axis = 'rotate3D (' +\
+      cos (360 * random ()) + ',' +\
+      cos (360 * random ()) + ', 0,';\
+    this.theta = 360 * random ();\
+    this.dTheta = dThetaMin + dThetaMax * random ();\
+    innerStyle.transform = this.axis + this.theta + 'deg)';\
+\
+    this.x = $ window.width () * random ();\
+    this.y =-deviasi;\
+    this.dx = sin (dxThetaMin + dxThetaMax * random ());\
+    this.dy = dyMin + dyMax * random ();\
+    outerStyle.left = this.x + 'px';\
+    outerStyle.top = this.y + 'px';\
+\
+    // Buat spline periodik\
+    this.splineX = createPoisson ();\
+    this.splineY = [];\
+    untuk (var i = 1, l = this.splineX.length - 1; i <l; ++ i)\
+      this.splineY [i] = deviasi * random ();\
+    this.splineY [0] = this.splineY [l] = deviasi * random ();\
+\
+    this.update = function (tinggi, delta) \{\
+      this.frame + = delta;\
+      this.x + = this.dx * delta;\
+      this.y + = this.dy * delta;\
+      this.theta + = this.dTheta * delta;\
+\
+      // Hitung spline dan ubah menjadi kutub\
+      var phi = this.frame% 7777/7777,\
+        i = 0,\
+        j = 1;\
+      sementara (phi> = this.splineX [j]) i = j ++;\
+      var rho = interpolasi (\
+        this.splineY [i],\
+        this.splineY [j],\
+        (phi - this.splineX [i]) / (this.splineX [j] - this.splineX [i])\
+      );\
+      phi * = PI2;\
+\
+      outerStyle.left = this.x + rho * cos (phi) + 'px';\
+      outerStyle.top = this.y + rho * sin (phi) + 'px';\
+      innerStyle.transform = this.axis + this.theta + 'deg)';\
+      return this.y> height + deviasi;\
+    \};\
+  \}\
+\
+\
+  function poof () \{\
+    if (! frame) \{\
+      // Tambahkan wadah\
+      document.body.appendChild (container);\
+\
+      // Tambahkan confetti\
+\
+      var theme = colorThemes [onlyOnKonami? colorThemes.length * random () | 0: 0],\
+        hitung = 0;\
+\
+      (function addConfetto () \{\
+\
+        if (onlyOnKonami && ++ count> partikel)\
+          kembali timer = tidak ditentukan;\
+\
+        if (isRunning) \{\
+          var confetto = Confetto baru (tema);\
+          confetti.push (confetto);\
+\
+          container.appendChild (confetto.outer);\
+          timer = setTimeout (addConfetto, spread * random ());\
+        \}\
+      \}) (0);\
+\
+\
+      // Mulai loop\
+      var prev = undefined;\
+      requestAnimationFrame (function loop (timestamp) \{\
+        var delta = prev? cap waktu - sebelumnya: 0;\
+        prev = cap waktu;\
+        var height = $ window.height ();\
+\
+        untuk (var i = confetti.length - 1; i> = 0; --i) \{\
+          if (confetti [i] .update (tinggi, delta)) \{\
+            container.removeChild (confetti [i] .outer);\
+            confetti.splice (i, 1);\
+          \}\
+        \}\
+\
+        if (timer || confetti.length)\
+          return frame = requestAnimationFrame (loop);\
+\
+        // Membersihkan\
+        document.body.removeChild (container);\
+        frame = tidak terdefinisi;\
+      \});\
+    \}\
+  \}\
+\
+  $ window.keydown (function (event) \{\
+    pointer = konami [pointer] === event.which?\
+      pointer + 1:\
+      + (event.which === konami [0]);\
+    if (pointer === konami.length) \{\
+      penunjuk = 0;\
+      poof ();\
+    \}\
+  \});\
+\
+  if (! onlyOnKonami) poof ();\
+\};\
+}
